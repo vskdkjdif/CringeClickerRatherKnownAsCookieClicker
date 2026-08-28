@@ -1,0 +1,2 @@
+# CringeClickerRatherKnownAsCookie Clicker
+
