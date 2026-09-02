@@ -1,4 +1,4 @@
-using TMPro
+using TMPro;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
@@ -7,13 +7,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI Cookietext;
 
     [SerializeField] int cookies;
-}
-// int cookies
-public void ClickedCookie()
-{
-    int cookies = 0;
-    cookies = cookies + 1;
-    cookieText. text = cookies
 
+    // int cookies
+    public void ClickedCookie()
+    {
+
+        cookies = cookies + 1;
+        int cookie = cookies;
+        Cookietext.text = cookies. ToString();
+
+
+    }
+
+
+
+    public void BuyGrandma()
+    {
+
+
+
+    }
 
 }
