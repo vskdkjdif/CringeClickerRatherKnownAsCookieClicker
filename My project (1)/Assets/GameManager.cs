@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
+    private static readonly int ShakeHash = Animator.StringToHash("shake");
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     [SerializeField] TextMeshProUGUI Cookietext;
@@ -11,6 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] float timer = 0;
 
     [SerializeField] bool hasGrandma;
+    [SerializeField] int GrandmaCost;
+
+    [SerializeField] Animator Cookie;
+
     // int cookies
 
     private void Update()
@@ -34,18 +40,21 @@ public class GameManager : MonoBehaviour
 
         cookies = cookies + 1;
         int cookie = cookies;
-        Cookietext.text = cookies. ToString();
-
+        Cookietext.text = cookies.ToString();
+        Cookie.SetTrigger("cookieShake");
 
     }
 
 
-
+   
     public void BuyGrandma()
     {
-
-
-
+        if(cookies >= GrandmaCost)
+        {
+            hasGrandma = true;
+            GrandmaCost *= 2;
+        }
+        
     }
 
 }
